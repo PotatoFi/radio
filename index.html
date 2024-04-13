@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="media/favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="media/favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="media/favicons/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Aperture Science Frequency Modulation Demodulator Auditory Modulator
+            Device
+        </title>
+        <style>
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                text-align: center;
+            }
+
+            img {
+                max-width: 80%;
+                height: auto;
+                vertical-align: middle;
+                cursor: pointer; /* Show a cursor, so the user can see that the image is clickable */
+            }
+
+            audio {
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Make the image clickable -->
+            <img
+                src="media/off.png"
+                id="playImage"
+                alt="Aperture Science Frequency Modulation Demodulator Auditory Modulator Device"
+                onclick="togglePlayPause()"
+            />
+            <audio id="audioPlayer" loop>
+                <source src="media/samba.mp3" type="audio/mpeg" />
+                Please use compatible testing apparatus.
+            </audio>
+        </div>
+
+        <script>
+            let isPlaying = false;
+            const audioPlayer = document.getElementById("audioPlayer");
+            const playImage = document.getElementById("playImage");
+
+            function togglePlayPause() {
+                if (isPlaying) {
+                    audioPlayer.pause();
+                    playImage.src = "media/off.png";
+                } else {
+                    audioPlayer.play();
+                    playImage.src = "media/on.png";
+                }
+                isPlaying = !isPlaying;
+            }
+        </script>
+    </body>
+</html>
